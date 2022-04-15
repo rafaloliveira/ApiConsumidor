@@ -34,6 +34,7 @@ function App() {
                 <p>{d.par}</p>
                 <p>{d.inc}</p>
                 <p>{d.lin}</p>
+                <p>{d.assina}</p>
               </div>
             ))}
         </div>

@@ -5,12 +5,11 @@
   padding: 5%;
   border-radius: 30px;
   box-shadow: 5px 6px 10px 3px grey;
-  width: fit-content; 
+  width: fit-content;
   height: fit-content;
-
-
-
-}.fundo :hover{
+  font-family: "Roboto", sans-serif;
+}
+.fundo :hover {
   transition: 1s ease-in;
   background-color: rgba(200, 255, 0, 0.295);
 }

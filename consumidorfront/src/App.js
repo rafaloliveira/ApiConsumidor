@@ -3,24 +3,16 @@ import "./App.css";
 
 function App() {
   const [data, setData] = useState([]);
-  const [art, setArt] = useState([]);
-  const artigos = art.artigos;
-  console.log(artigos);
-  console.log(art);
+
   console.log(data);
 
   useEffect(() => {
-    fetch("http://localhost:8080/")
+    fetch("http://localhost:8080/titulo1")
       .then((response) => response.json())
 
       .then((response) => setData(response));
   }, []);
-  useEffect(() => {
-    fetch("http://localhost:8080/")
-      .then((response) => response.json())
 
-      .then((response) => setArt(response));
-  }, []);
   return (
     <div className="App">
       <div className="fundo">
@@ -33,8 +25,15 @@ function App() {
         <div>
           {data &&
             data.map((d) => (
-              <div key={d.artigos}>
+              <div key={d.art}>
+                <p>{d.titulo}</p>
                 <p>{d.capitulo}</p>
+                <p>{d.ses}</p>
+                <p>{d.art}</p>
+                <p>{d.pu}</p>
+                <p>{d.par}</p>
+                <p>{d.inc}</p>
+                <p>{d.lin}</p>
               </div>
             ))}
         </div>

@@ -12,6 +12,33 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (request, response) => {
+  return response.json([
+    {
+      "Api código de defesa do consumidor":
+        "Desenvolvida por Alan Magano e Rafael Oliveira",
+    },
+    {
+      endpoint: "/titulo1",
+    },
+    {
+      endpoint: "/titulo2",
+    },
+    {
+      endpoint: "/titulo3",
+    },
+    {
+      endpoint: "/titulo4",
+    },
+    {
+      endpoint: "/titulo5",
+    },
+    {
+      endpoint: "/titulo6",
+    },
+  ]);
+});
+
 app.get("/titulo1", (request, response) => {
   return response.json(titulo1);
 });

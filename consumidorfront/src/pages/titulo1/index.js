@@ -1,14 +1,25 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useState } from "react";
 import { Header } from "../../components/Header";
-import { PrimaryTitle } from "../../components/PrimaryTitle";
+import PageCard from "../../components/PageCard";
 import { Container } from "./styles";
+import { PageLink } from "../../components/PageLink";
 
 export function Titulo1() {
+  const [titulo1, setTitulo1] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:8080/titulo1")
+      .then((response) => response.json())
+      .then((response) => setTitulo1(response));
+  }, []);
+
   return (
     <Container>
       <Header />
-      <PrimaryTitle texto="Título I" />
-      <Link to="/">home</Link>
+      <PageLink />
+      {titulo1.map((tit) => (
+        <PageCard key={tit.art} item={tit} />
+      ))}
     </Container>
   );
 }

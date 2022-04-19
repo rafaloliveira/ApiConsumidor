@@ -1,13 +1,23 @@
 import { Link } from "react-router-dom";
 import { Cardtexto, Container, Cardtitulo } from "./styles";
 
-export function Card(to) {
-  console.log(to.to);
+export function Card(props) {
+  console.log(props.to);
+  console.log(props.titulo);
   return (
     <Container>
-      <Cardtitulo> TituloI </Cardtitulo>
-      <Cardtexto> Das Disposições Gerais </Cardtexto>
-      <Link to={to.to}>link</Link>
+      <Link
+        style={{
+          textDecoration: "none",
+          color: "inherit",
+          padding: 15,
+          width: "100%",
+        }}
+        to={props.to}
+      >
+        <Cardtitulo>{props.titulo}</Cardtitulo>
+        <Cardtexto>{props.texto}</Cardtexto>
+      </Link>
     </Container>
   );
 }

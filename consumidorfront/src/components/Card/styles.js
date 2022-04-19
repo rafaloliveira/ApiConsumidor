@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const Container = styled.div`
   border: 1px solid gray;
   border-radius: 30px;
-
+  width: 15vw;
   margin: 2%;
   padding: 5%;
-  width: fit-content;
   text-align: center;
   justify-content: center;
   &:hover {
@@ -15,4 +14,6 @@ export const Container = styled.div`
 `;
 
 export const Cardtitulo = styled.h3``;
-export const Cardtexto = styled.span``;
+export const Cardtexto = styled.div`
+  text-align: center;
+`;
